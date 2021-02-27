@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<style>
+html {
+    font-family: sans-serif;
+}
+
+div {
+    padding: 30px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+</style>
+
+<script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Painter Political Alignment home page" content="Painter Political Alignment home page">
+        <title>Painter Political Alignment Exam</title>
+        <link rel="Website Icon" href="">
+    </head>
+    <body>
+        
+        <header>
+            <h1>Painter Political Alignment Exam</h1>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="home.html">Home</a>
+                    <a href="exam.html">Take the Exam</a>
+                    <a href="profile.html">Your Profile</a>
+                    <a href="#">Other Pages...</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <form id="exam-form">
+                <div class="exam-group">
+                    <label id="dropdown-label" for="dropdown">Dropdown Question: </label>
+                    <select id="dropdown"  class="exam-control" name="" required>
+                        <option disabled selected value>Please select an option</option>
+                        <option value="1">Answer 1</option>
+                        <option value="2">Answer 2</option>
+                        <option value="3">Answer 3</option>
+                        <option value="4">Answer 4</option>
+                        <option value="5">Answer 5</option>                    
+                    </select>
+                </div>
+                <div class="exam-group">
+                    <label id="radio-label">Single-Choice Non-Dropdown Question: </label>
+                    <label  class="exam-control">
+                        <input name="radio" value="1" type="radio">
+                        Answer 1
+                    </label>
+                    <label class="exam-control">
+                        <input name="radio" value="2" type="radio">
+                        Answer 2
+                    </label  class="exam-control">
+                    <label class="exam-control">
+                        <input name="radio" value="3" type="radio">
+                        Answer 3
+                    </label>
+                    <label class="exam-control">
+                        <input name="radio" value="4" type="radio">
+                        Answer 4
+                    </label>
+                </div>
+                <div class="exam-group">
+                    <label id="checkbox-label">Multi-Answer Question:</label>
+                    <label class="exam-control">
+                        <input value="1" type="checkbox">
+                        Answer 1
+                    </label>
+                    <label class="exam-control">
+                        <input value="2" type="checkbox">
+                        Answer 2
+                    </label>
+                    <label class="exam-control">
+                        <input value="3" type="checkbox">
+                        Answer 3
+                    </label>
+                </div>
+                <div class="exam-group">
+                    <label id="message-label">Typed-Answer Question:</label>
+                    <textarea id="message" class="exam-control" name="message" placeholder="Please type your answer here"></textarea>
+                </div>
+                <div class="submit-button">
+                    <button id="submit" type="submit">Submit</button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
