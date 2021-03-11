@@ -53,40 +53,24 @@ div {
     .show {display:block;}
 </style>
     
-<script>
-        /* When the user clicks on the button,
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-    
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-</script>
 <html>
+
+    <!--attach javascrip files-->
+    <script type="text/javascript" src="polCo.js"></script>
+
+    <!--tab header and metadata-->
     <head>
         <meta charset="UTF-8">
         <meta name="Painter Political Alignment home page" content="Painter Political Alignment home page">
         <title>Painter Political Alignment Exam</title>
         <link rel="Website Icon" href="">
     </head>
-
+    
     <body>
         <header>
             <h1>Painter Political Alignment Exam</h1>
             <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Menu</button>
+                <button onclick="menuFunction()" class="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="home.html">Home</a>
                     <a href="exam.html">Take the Exam</a>
